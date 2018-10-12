@@ -1,0 +1,42 @@
+doctype
+html
+ head
+  meta(charset="utf-8")
+  title #{title}
+ body
+  h1 #{title}
+  h1 foo
+  h2= book.name
+  h3 "#{book.name}" for #{book.price}
+  ul#books
+   li
+    a(href="#book-a") Book A
+   li
+    a(href="#book-b") Book B
+  p.
+   foo bar
+   hello world
+  - var foo = "zpp"
+  h1= foo
+  input(type="text", placeholder="your name")
+  input(type="text", placeholder='Hello #{book.name}')
+  input(type="checkbox" checked=true, disabled=false)
+  // single line comment
+  //- invisible single line comment
+  // block comment
+  h1 hello world
+  if name == 'Bob1'
+   h1 hello Bob
+  else 
+   h1 My name is #{name}
+  select
+   each fruit, i in fruits
+    option(value=i) Fruit #{fruit}	
+  mixin book(name, price)
+   li #{name} for #{price}
+  ul#book
+   +book("BookA", 12.99)
+   +book("BookB", 5.99)
+  
+
+
