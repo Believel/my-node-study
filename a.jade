@@ -1,0 +1,54 @@
+doctype html
+<!--[if IE 8]><html class='ie8'><![endif]-->
+<!--[if IE 9]><html class='ie9'><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+html
+ head
+  meta(charset="utf-8")
+  -var mycourse= 'jade'
+  title #{mycourse} Myjade
+  style.
+   body {color: #ff6600}
+  script.
+   var course='jade'
+ body
+  -data= 'text'
+  -htmlData='<script>alert(1)</script>'
+  p #{data}
+  p #{htmlData}
+  // 加！是非转义
+  p !{htmlData}
+  p= data
+  p= htmlData
+  p!= htmlData
+  // 直接输出'#{data}',不当变量输出
+  p\#{data}
+  h1 单行注释，会缓存到html代码中
+  // h3 哈哈
+  h1 单行注释，不会缓存到html代码中
+  //- h3 嘻嘻
+  h1#title.title 欢迎您
+  h1 块注释，采用在注释下缩进
+  //-
+   p 你号码
+    a(href='http://www.mooc.com',title="mooc study jade") link
+  p.
+   1. aa
+   2. bb
+   3. cc
+   4. dd
+  -var friends = 10
+  case friends
+   when 0
+    p you have no friends
+   when 1
+    p you have a friend
+   default 
+    p you have #{friends} friends
+  -for (var x=0; x<3; x++)
+   li item
+  -list = ["Uno", "Bos", "Tres", "Cuatro"]
+   each item in list
+    li= item
+  p= 'This code is <escaped>!'
+</html>

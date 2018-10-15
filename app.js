@@ -10,16 +10,16 @@ app.set('view engine', 'jade')
 
 // index page
 // 给视图文件定义路由
-// app.get('/', function(req, res){
-//     // 第一个参数是视图文件名
-//     // 第二个参数是给这个视图文件传的参数对象
-//     res.render('index', {
-//         title: 'imooc 首页'
-//     })
-// })
+app.get('/', function(req, res){
+    // 第一个参数是视图文件名
+    // 第二个参数是给这个视图文件传的参数对象
+    res.render('./pages/index', {
+        title: 'imooc 首页'
+    })
+})
 // admin page
 app.get('/admin/movie', function(req, res){
-    res.render('admin', {
+    res.render('./pages/admin', {
         title: 'imooc 后台录入页'
     })
 })
@@ -36,12 +36,12 @@ app.get('/admin/list', function(req, res){
     })
 })
 // demo page
-app.get('/', function(req, res){
-    res.render('demo', {
-        title: 'imooc 练习jade语法',
-        book: {"name": "hello", "price": 12.99},
-        name: 'Bob',
-        fruits: ["Apple", "Orange", "Pie"]
-    })
-})
+// app.get('/', function(req, res){
+//     res.render('demo', {
+//         title: 'imooc 练习jade语法',
+//         book: {"name": "hello", "price": 12.99},
+//         name: 'Bob',
+//         fruits: ["Apple", "Orange", "Pie"]
+//     })
+// })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -1,0 +1,42 @@
+<!DOCTYPE html><!--[if IE 8]><html class='ie8'><![endif]-->
+<!--[if IE 9]><html class='ie9'><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jade Myjade</title>
+    <style>body {color: #ff6600}</style>
+    <script>var course='jade'</script>
+  </head>
+  <body>
+    <p>text</p>
+    <p>&lt;script&gt;alert(1)&lt;/script&gt;</p>
+    <!-- 加！是非转义-->
+    <p><script>alert(1)</script></p>
+    <p>text</p>
+    <p>&lt;script&gt;alert(1)&lt;/script&gt;</p>
+    <p><script>alert(1)</script></p>
+    <!-- 直接输出'#{data}',不当变量输出-->
+    <p>#{data}</p>
+    <h1>单行注释，会缓存到html代码中</h1>
+    <!-- h3 哈哈-->
+    <h1>单行注释，不会缓存到html代码中</h1>
+    <h1 id="title" class="title">欢迎您</h1>
+    <h1>块注释，采用在注释下缩进</h1>
+    <p>
+      1. aa
+      2. bb
+      3. cc
+      4. dd
+    </p>
+    <p>you have 10 friends</p>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>Uno</li>
+    <li>Bos</li>
+    <li>Tres</li>
+    <li>Cuatro</li>
+    <p>This code is &lt;escaped&gt;!</p>
+  </body>
+</html></html>
