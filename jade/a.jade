@@ -9,9 +9,58 @@ html
   title #{mycourse} Myjade
   style.
    body {color: #ff6600}
+   h2 {color: #000000}
+   h3 {color: #333333}
   script.
    var course='jade'
  body
+  h2 流程
+  h3 if else
+  - var lessons=['jade', 'node']
+  - var isMooc= true
+  if lessons
+   if lessons.length > 2
+    p #{lessons.join(', ')}
+   else if lessons.length > 1
+    p #{lessons.join(', ')}
+   else 
+    p no lesson
+  else
+   p no lesson
+  h3 unless 反向判断
+  unless !isMooc
+   p #{lessons.length}
+  h3 case
+  - var name = 'jade'
+  case name
+   when 'node'
+   when 'express': p Hi express
+   when 'jade': p Hi jade
+   default
+    p #{name}
+  h3 while
+  -var n= 0
+  ul
+   - while(n<4)
+    li= n++
+  h3 for
+  -var immoc= {course:'jade', level:'high'}
+  -for(var k in immoc)
+   p= immoc[k]
+  h3 each
+  each value,key in immoc
+   p #{key}: #{value}
+  -var courses = ['node', 'jade', 'express']
+  each item in courses
+   p= item
+  h3 嵌套循环 
+  -var selections = [{id: '1',items:['a', 'b']},{id:'2', items:['c', 'd']}]
+  dl
+   each selection in selections
+    dt= selection.id 
+    each item in selection.items
+     dd= item
+  // 转义
   -data= 'text'
   -htmlData='<script>alert(1)</script>'
   p #{data}
