@@ -8,5 +8,38 @@ html
   title mixin
  body
   h2 mixin
+  mixin lesson
+   p imooc jade study
+  +lesson
+  mixin study(name, courses)
+   p #{name}
+   ul.courses
+    each course in courses
+     li course
+  +study('tom', ['jade', 'node', 'express'])
+  // mixin 传递代码块
+  mixin team(slogon)
+   h4 #{slogon}
+   if block
+    block
+   else 
+    p no team
+  +team('slogon')
+   p Good Job!
+  // mixin 传递属性
+  mixin attr(name)
+   p(class!=attributes.class) #{name}
+  +attr('attr')(class='magic')
+  // mixin 传递多个属性
+  mixin attrs(name)
+   p&attributes(attributes) #{name}
+  +attrs('attrs')(class='magic2', id="attrsid")
+  // mixin 传递不确定的参数属性时
+  mixin magic(name, ...items)
+   ul(class='#{name}')
+    each item in items
+     li item
+  +magic('magic', 'node', 'express', 'koa')
+
   
 </html>
