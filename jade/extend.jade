@@ -1,0 +1,12 @@
+// extends 模板的继承是继承其他文件的
+extends layout
+// block 如果其他文件定义了就覆盖用当前文件定义的内容
+block content
+  h3 模板继承
+  include style
+  include title.html
+  block desc
+   p imooc jade study extends
+  block desc
+  block desc
+  
