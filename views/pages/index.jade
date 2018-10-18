@@ -1,2 +1,14 @@
-extends ../layout.jade 
-   h1 my Index
+extends ../layout
+// 声明主要内容
+block content
+ .container
+  .row
+   each item in movies
+    .col-md-2
+     .thumbnail
+      a(href="/movie/#{item._id}")
+       img(src="#{item.poster}", alt="#{item.title}",width="150", height="100")
+      .caption
+       h3 #{title}
+       p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 观看预告片
+      
