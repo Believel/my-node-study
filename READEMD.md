@@ -13,3 +13,14 @@ node app.js
 3. 在上面文件目录下：打开命令行输入：jade -P -w a.jade (-P（大写）是转化为未压缩的html文件， -w是监视jade文件的变化刷新)
 
 ```
+// 单条查询
+Movie.findOne({_id: id})
+     .exec(function(err,movies){})
+// 批量查询
+Movie.find({})
+     .exec(function(err, movies){})
+// 单条删除
+Movie.remove({_id: id}, function(err,movie){
+    if(err) {console.log(err)}
+})
+// 批量删除
